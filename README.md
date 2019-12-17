@@ -208,7 +208,7 @@ var logger = req.logger.createLogger({"field-a" :"value"});
 
 
 ### Custom fields
-Custom fields are basically additional key-value pairs added to the logs. As of version 6.0.0 you have to register custom fields, before you can write them. This can be done, by calling following global method:
+Custom fields are basically additional key-value pairs added to the logs. As of version 6.0.0 you have to register custom fields, before you can write them. This can be done by calling the following global method:
 ```js
 log.registerCustomFields(["field-a", "field-b", "field-c"]);
 ```
@@ -218,13 +218,13 @@ You can now log messages and attach a key-value object as stated in the message 
 logger.info("My log message", {"field-a" :"value"}); 
 ```
 
-Another way of adding custom fields to log messages, is to set them for a logger instance. All logs, that are logged by this logger, contain the specified custom fields and values. 
+Another way of adding custom fields to log messages is to set them for a logger instance. All logs, that are logged by this logger, contain the specified custom fields and values. 
 ```js
 logger.setCustomFields({"field-a": "value"})
 logger.info("My log message"); 
 ```
 
-You can also set custom fields globally, by calling the same function on the global `log` instance. All logs, including request logs, will now contain the specified custom fields and values.
+You can also set custom fields globally by calling the same function on the global `log` instance. All logs, including request logs, will now contain the specified custom fields and values.
 ```js
 log.setCustomFields({"field-b": "test"});
 ```
